@@ -1,11 +1,12 @@
+import { ShoppingCart } from "lucide-react";
 
 function CartWidget(){
-
     return(
-        <i class="fa-solid fa-cart-shopping fa-xl"></i>
-
+        <div className="cart-widget">
+            <ShoppingCart/>
+        </div>
     );
-
+   
 }
 
 export default CartWidget;
