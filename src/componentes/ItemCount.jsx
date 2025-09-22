@@ -1,20 +1,17 @@
 import { useState } from 'react';
 
 function ItemCount({ stock, initial, onAdd }) {
-    const [cantidad, setCantidad] = useState(initial);
 
-    const incrementar = () => {
-        if (cantidad < stock) {
-            setCantidad(cantidad + 1);
-        }
+    const [cantidad, setCantidad] = useState(initial); //Cambiar el estado de la cantidad
+
+    const aumentar = () =>{
+        setCantidad(cantidad + 1);
     };
 
-    const decrementar = () => {
-        if (cantidad > 1) {
-            setCantidad(cantidad - 1);
-        }
+    const disminuir = () =>{
+        setCantidad(cantidad - 1);
     };
-
+    
     const handleAddToCart = () => {
         onAdd(cantidad);
     };
@@ -23,7 +20,7 @@ function ItemCount({ stock, initial, onAdd }) {
         <div className="item-count">
             <div className="count-controls">
                 <button 
-                    onClick={decrementar} 
+                    onClick={disminuir} 
                     className="count-btn"
                     disabled={cantidad <= 1}
                 >
@@ -31,7 +28,7 @@ function ItemCount({ stock, initial, onAdd }) {
                 </button>
                 <span className="count-display">{cantidad}</span>
                 <button 
-                    onClick={incrementar} 
+                    onClick={aumentar} 
                     className="count-btn"
                     disabled={cantidad >= stock}
                 >

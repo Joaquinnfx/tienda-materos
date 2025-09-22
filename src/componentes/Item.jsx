@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 
+
 function Item({ producto }) {
+    
     return (
         <div className="item">
             <img
